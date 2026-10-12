@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "roomSaber",
+  "name": "roomSaber",
+  "author": "tovakai",
+  "version": "0.0.1",
+  "description": "Research-stage Steam Frame mixed-reality portal mod (diagnostics only).",
+  "gameVersion": "1.44.1",
+  "dependsOn": {
+    "BSIPA": "^4.3.7"
+  }
+}

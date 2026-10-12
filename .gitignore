@@ -1,0 +1,29 @@
+# Never commit proprietary game files, redistributable runtime DLLs, or camera data.
+[Bb]in/
+[Oo]bj/
+.vs/
+.idea/
+*.user
+*.suo
+*.pdb
+*.cache
+artifacts/
+Game/
+BSInstances/
+Beat Saber_Data/
+Plugins/
+Libs/
+UserData/
+logs/
+*.log
+*.zip
+*.tar.gz
+*.mp4
+*.mkv
+*.png
+*.jpg
+*.jpeg
+*.dll
+*.exe
+*.so
+*.dylib

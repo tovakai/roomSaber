@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>RoomSaber</AssemblyName>
+    <RootNamespace>RoomSaber</RootNamespace>
+    <Version>0.0.1</Version>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Enables .NET Framework 4.8 compilation with dotnet SDK on non-Windows hosts.
+         Actual game/BSIPA binaries must come from the user's own installation. -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="IPA.Loader">
+      <HintPath>$(BeatSaberDir)/Beat Saber_Data/Managed/IPA.Loader.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <EmbeddedResource Include="manifest.json">
+      <LogicalName>manifest.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Target Name="ValidateBeatSaberDir" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(BeatSaberDir)' == ''"
+           Text="Pass -p:BeatSaberDir=/path/to/your/owned/BeatSaber/instance" />
+    <Error Condition="!Exists('$(BeatSaberDir)/Beat Saber_Data/Managed/IPA.Loader.dll')"
+           Text="IPA.Loader.dll not found; install BSIPA in the target instance first." />
+  </Target>
+</Project>
